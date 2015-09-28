@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ActaVitae</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!--Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!--FontAwesome -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!-- Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Oswald|Oxygen:400,300|Poiret+One' rel='stylesheet' type='text/css'>
+
+<!-- Stylesheets -->
+<link rel="stylesheet/less" href="/main.less" type="text/css" />
+<!-- Less JS -- stylesheets before this line -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
+
+<script>
+$(function(){
+    $("#video").click(function(e){
+        e.stopPropagation();
+        $(".popup").toggle();
+    });
+    $("body").click(function(){
+        $(".popup").hide();
+        var video = $("#player").attr("src");
+        $("#player").attr("src","");
+        $("#player").attr("src",video);
+
+    });
+});
+
+$(function(){
+    $(".overlay").hover(
+  function() {
+    $(".play").css( { opacity: "1" } );
+  }, function() {
+    $(".play").css( { opacity: "0.8" } );
+  }
+)});
+
+</script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="popup" style="display:none;">
+    <iframe id="player" width="100%" height="100%" src="https://www.youtube.com/embed/NkenmnveSOM" frameborder="0" allowfullscreen></iframe>
+    </div>
+  <div id="wrap">
+    <div class="left">
+    <img id="logopic" alt="logo" src="images/logo.png" />
+    <h1>
+        Was ist <span class="orange">acta</span><span class="green">vitae</span>?
+      </h1>
+      <h2>
+        <span class="bolds">actavitae</span> hilft Patienten ihre persönliche Behandlung besser, flexibler und effizienter zu
+        gestalten und entlastet die Betroffenen und ihre Familien bei administrativen Aufgaben wie
+        der Sammlung und Weitergabe von medizinischen Daten.
+      </h2>
+      <div id="video">
+        <div class="overlay">
+          <img class="play" src="images/play.png" alt="play" />
+        </div>
+        <img height="98px" width="224px" src="http://img.youtube.com/vi/NkenmnveSOM/mqdefault.jpg">
+      </div>
+      <a href="http://trip-app.com" id="reg-button">
+        registrieren<i class="fa fa-play arrow"></i>
+      </a>
+
+      <p id="login">Bereits ein Konto? Hier geht es zum <a href="http://trip-app.com" class="loginlink">Login</a>.</p>
+      <div class="clearfix"></div>
+      <a class="availability as">
+        <p>Coming soon to </p>
+        <img src="images/applestore.png" alt="appple store badge" />
+      </a>
+      <a href="http://trip-app.com" class="availability gp">
+        <p>Available on </p>
+        <img src="images/googleplay.png" alt="google play badge" />
+      </a>
+    </div>
+    <div class="right">
+      <img src="images/phonepic.png" alt="smartphone" />
+    </div>
+    <div class="clearfix"></div>
+    <div id="footer">Ein Projekt der CIP society GmbH, <a href="http://cip-society.com/footer/impressum-1" class="orange link">Impressum</a></div>
+  </div>
+</div>
+  </body>
+</html>
